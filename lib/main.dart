@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
-import 'screens/link_checker.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+
+import 'package:myapp/screens/link_checker.dart';
+import 'package:myapp/screens/account.dart';
+import 'package:myapp/screens/history.dart';
+
+PersistentTabController _controller = PersistentTabController(initialIndex: 0);
 
 void main() {
   runApp(const MyApp());
 }
-//hi
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -14,26 +20,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'ScamLikely',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(
             seedColor: const Color.fromARGB(255, 0, 94, 20)),
         useMaterial3: true,
       ),
-      home: const LinkChecker(title: 'ScamLikely'),
+      home: const LinkChecker(
+        title: 'ScamLikely',
+      ),
+      initialRoute: '/',
+      routes: {
+        '/history': (final context) => const History(),
+        '/account': (final context) => const Account(),
+      )
+      },
     );
   }
 }

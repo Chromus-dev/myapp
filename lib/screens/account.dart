@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class History extends StatefulWidget {
-  const History({super.key});
+class Account extends StatefulWidget {
+  const Account({super.key});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -13,10 +13,10 @@ class History extends StatefulWidget {
   // always marked "final".
 
   @override
-  State<History> createState() => _HistoryState();
+  State<Account> createState() => _AccountState();
 }
 
-class _HistoryState extends State<History> {
+class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -29,7 +29,7 @@ class _HistoryState extends State<History> {
       body: Center(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
-          child: Text('History')),
+          child: Text('Account')),
     );
   }
 }
