@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:rename/rename.dart';
 
 // pages
 import 'package:scamlikely/pages/link_checker.dart';
