@@ -3,24 +3,26 @@
 // trying to build bottom app bar based off of this
 // https://github.com/BilalShahid13/PersistentBottomNavBar/tree/master
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LinkChecker extends StatefulWidget {
-  const LinkChecker({super.key, required this.title});
+class LinkCheckerPage extends StatefulWidget {
+  static const title = "Link Checker";
+  static const icon = Icon(CupertinoIcons.profile_circled);
 
-  final String title;
+  const LinkCheckerPage({super.key});
 
   @override
-  State<LinkChecker> createState() => _LinkCheckerState();
+  State<LinkCheckerPage> createState() => _LinkCheckerPageState();
 }
 
-class _LinkCheckerState extends State<LinkChecker> {
+class _LinkCheckerPageState extends State<LinkCheckerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text(widget.title),
+          title: Text(LinkCheckerPage.title),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,

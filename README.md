@@ -1,7 +1,8 @@
 https://github.com/flutter/samples/tree/main/platform_design
 navigation example
 
-# myapp
+
+# ScamLikely
 
 A new Flutter project.
 
