@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
-import 'package:myapp/screens/link_checker.dart';
-import 'package:myapp/screens/account.dart';
-import 'package:myapp/screens/history.dart';
+// pages
+import 'package:myapp/pages/link_checker.dart';
+import 'package:myapp/pages/account.dart';
+import 'package:myapp/pages/history.dart';
 
 PersistentTabController _controller = PersistentTabController(initialIndex: 0);
 
