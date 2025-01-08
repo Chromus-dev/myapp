@@ -32,8 +32,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/history': (final context) => const History(),
         '/account': (final context) => const Account(),
-      )
-      },
+      }
+      ,
     );
   }
 }
