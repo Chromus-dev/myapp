@@ -11,7 +11,19 @@ class LinkCheckerPage extends StatefulWidget {
 }
 
 class _LinkCheckerPageState extends State<LinkCheckerPage> {
-  int _count = 0;
+  late TextEditingController _textController;
+
+  @override
+  void initState() {
+    super.initState();
+    _textController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _textController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +35,20 @@ class _LinkCheckerPageState extends State<LinkCheckerPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Center(
-                child: Text('You have pressed the button $_count times.'),
-              ),
-              const SizedBox(height: 20.0),
-              Center(
+              Row(
+                children: [
+                  Expanded(
+                    child: CupertinoTextField(
+                      controller: _textController,
+                      placeholder: 'Enter a URL',
+                    ),
+                  ),
+                  Center(
                 child: CupertinoButton.filled(
-                  onPressed: () => setState(() => _count++),
+                  onPressed: () {  },
                   child: const Icon(CupertinoIcons.add),
                 ),
+              )],
               ),
             ],
           ),

@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
 }
 
 // TODO: make bottom bar like this: https://github.com/BilalShahid13/PersistentBottomNavBar/tree/master
+// style 6
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -33,9 +34,20 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late CupertinoTabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = CupertinoTabController(initialIndex: 1); // Set default tab to index 1
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
+        controller: _tabController,
+
         tabBar: CupertinoTabBar(items: const [
           BottomNavigationBarItem(
             icon: HistoryPage.icon,
@@ -50,6 +62,7 @@ class _HomePageState extends State<HomePage> {
             label: AccountPage.title,
           ),
         ]),
+        
         tabBuilder: (context, index) {
           assert(index <= 2 && index >= 0, 'Unexpected tab index $index');
 
