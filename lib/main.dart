@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:rename/rename.dart';
 
 // pages
 import 'package:scamlikely/pages/link_checker.dart';
@@ -17,20 +15,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const CupertinoApp(
       title: 'ScamLikely',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 0, 94, 20)),
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
+      theme: CupertinoThemeData(brightness: Brightness.dark),
+      home: HomePage(),
     );
   }
 }
 
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:714836973.
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:1088884999.
+// TODO: make bottom bar like this: https://github.com/BilalShahid13/PersistentBottomNavBar/tree/master
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 

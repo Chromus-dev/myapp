@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class AccountPage extends StatefulWidget {
   static const title = "Account";
@@ -12,11 +11,30 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
+  int _count = 0;
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-          child: Text('Account')),
-    );
+    return CupertinoPageScaffold(
+        navigationBar: const CupertinoNavigationBar(
+          middle: Text(AccountPage.title),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Center(
+                child: Text('You have pressed the button $_count times.'),
+              ),
+              const SizedBox(height: 20.0),
+              Center(
+                child: CupertinoButton.filled(
+                  onPressed: () => setState(() => _count++),
+                  child: const Icon(CupertinoIcons.add),
+                ),
+              ),
+            ],
+          ),
+        ));
   }
 }

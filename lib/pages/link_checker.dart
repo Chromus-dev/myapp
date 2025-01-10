@@ -1,14 +1,8 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-// trying to build bottom app bar based off of this
-// https://github.com/BilalShahid13/PersistentBottomNavBar/tree/master
-
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class LinkCheckerPage extends StatefulWidget {
   static const title = "Link Checker";
-  static const icon = Icon(CupertinoIcons.profile_circled);
+  static const icon = Icon(CupertinoIcons.search);
 
   const LinkCheckerPage({super.key});
 
@@ -17,27 +11,30 @@ class LinkCheckerPage extends StatefulWidget {
 }
 
 class _LinkCheckerPageState extends State<LinkCheckerPage> {
+  int _count = 0;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text(LinkCheckerPage.title),
+    return CupertinoPageScaffold(
+        navigationBar: const CupertinoNavigationBar(
+          middle: Text(LinkCheckerPage.title),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'You have pushed the button this many times:',
-                  ),
-                ],
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Center(
+                child: Text('You have pressed the button $_count times.'),
               ),
-            ),
-          ],
+              const SizedBox(height: 20.0),
+              Center(
+                child: CupertinoButton.filled(
+                  onPressed: () => setState(() => _count++),
+                  child: const Icon(CupertinoIcons.add),
+                ),
+              ),
+            ],
+          ),
         ));
   }
 }
