@@ -37,7 +37,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
         tabBar: CupertinoTabBar(items: const [
-          // Suggested code may be subject to a license. Learn more: ~LicenseLog:3189122363.
           BottomNavigationBarItem(
             icon: HistoryPage.icon,
             label: HistoryPage.title,
